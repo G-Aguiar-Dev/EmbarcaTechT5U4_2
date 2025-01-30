@@ -62,10 +62,10 @@ int main()
     // Loop principal
     while (true) {
         if (!gpio_get(BUTTON_PIN) && !gpio_get(LED_PIN_RED)) { // Leitura do botão e do último LED aceso
-            sleep_ms(100); // debounce
-            if(!gpio_get(BUTTON_PIN)){ //Releitura do botão
+            sleep_ms(100); // Debounce
+            if(!gpio_get(BUTTON_PIN)){ // Releitura do botão
                 printf("Ligando LEDs\n"); // Mensagem de depuração
-                // Liga os LEDs
+                // Ligar os LEDs
                 gpio_put(LED_PIN_GREEN, 1);
                 gpio_put(LED_PIN_BLUE, 1);
                 gpio_put(LED_PIN_RED, 1);
@@ -74,4 +74,5 @@ int main()
         }
     sleep_ms(10); // Evitar leituras em excesso
     }
+return 0;
 }
